@@ -21,7 +21,7 @@ include:
   - .tools
 
 mongodb_package:
-{% if use_ppa and salt['grains.get']('os_family') = "Debian" %}
+{% if use_ppa and salt['grains.get']('os_family') == "Debian" %}
   pkgrepo.managed:
     - humanname: MongoDB PPA
     - name: deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
@@ -31,7 +31,7 @@ mongodb_package:
   pkg.installed:
     - name: {{ package_name }}
     - version: {{ version }}
-{% elif use_ppa and salt['grains.get']('os_family') = "RedHat" %}
+{% elif use_ppa and salt['grains.get']('os_family') == "RedHat" %}
   pkgrepo.managed:
     - humanname: MongoDB Repository
     - baseurl: http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
