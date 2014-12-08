@@ -37,7 +37,6 @@ mongodb_package:
     - baseurl: http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/
     - gpgcheck: 0
   pkg.installed:
-    - fromrepo: MongoDB Repository
     - name: {{ package_name }}
     - version: {{ version }}
 {% else %}

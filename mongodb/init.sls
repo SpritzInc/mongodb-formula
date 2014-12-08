@@ -47,8 +47,8 @@ mongodb_package:
 mongodb_db_path:
   file.directory:
     - name: {{ db_path }}
-    - user: mongodb
-    - group: mongodb
+    - user: {{ mongodb.mongod }}
+    - group: {{ mongodb.mongod }}
     - mode: 755
     - makedirs: True
     - recurse:
@@ -58,8 +58,8 @@ mongodb_db_path:
 mongodb_log_path:
   file.directory:
     - name: {{ log_path }}
-    - user: mongodb
-    - group: mongodb
+    - user: {{ mongodb.mongod }}
+    - group: {{ mongodb.mongod }}
     - mode: 755
     - makedirs: True
 
