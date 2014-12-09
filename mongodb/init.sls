@@ -83,7 +83,7 @@ mongodb_configuration:
         logpath: {{ log_path }}
         port: {{ settings.get('port', 27017) }}
         bind_ip: {{ settings.get('bind_ip', "127.0.0.1") }}
-        replica_set: {{ replica_set }}
+        replica_set: {{ replica_set.name }}
         config_svr: {{ config_svr }}
         shard_svr: {{ shard_svr }}
 
